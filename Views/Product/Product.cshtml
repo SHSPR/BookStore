@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Product";
+}
+
+<div class="card mb-3" style="max-width: 1000px;">
+    <div class="row g-0">
+        @{            
+            foreach (var products in ViewBag.Products)
+            {
+                <div class="col-md-4">                    
+                    <img src="@products.Cover" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@products.Title</h5>
+                        <p class="card-text">@products.Description </p>
+                        <h5 class="card-subtitle mb-2 text-muted">@products.Price RUB.</h5>
+                        <a href="#" class="btn btn-primary">Купить</a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
