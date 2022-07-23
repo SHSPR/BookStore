@@ -1,6 +1,9 @@
-﻿using BookStore.Models;
+﻿using BookStore.Data;
+using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.Controllers
 {
@@ -13,8 +16,14 @@ namespace BookStore.Controllers
             _logger = logger;
         }
 
+        ProductContext productContext = new ProductContext();
+
         public IActionResult Index()
         {
+            IEnumerable<ProductModel> products = productContext.Products;
+
+            ViewBag.Products = products;
+
             return View();
         }
 
