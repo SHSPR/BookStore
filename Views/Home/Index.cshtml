@@ -18,7 +18,7 @@
                         <div class="card-body text-center">
                             <h5 class="card-title">@products.Author <br> @products.Title</h5>
                             <p class="card-text"></p>                            
-                            <a href="#" class="btn btn-primary">В Корзину</a>
+                            <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-id="@products.ProductID">В Корзину</a>
                             <a href="Product/@products.ProductID" class="btn btn-primary">Подробнее..</a>
                         </div>
                     </div>
