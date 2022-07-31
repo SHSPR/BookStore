@@ -1,14 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Product";
 }
+@model BookStore.Models.ProductModel
 
 <div class="card mb-3" style="max-width: 1000px;">
     <div class="row g-0">
-        @{            
+        @{
             foreach (var products in ViewBag.Products)
             {
-                <div class="col-md-4">                    
+                <div class="col-md-4">
                     <img src="@products.Cover" class="img-fluid rounded-start" alt="...">
+                    <input type="hidden" asp-for="ProductID" />
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

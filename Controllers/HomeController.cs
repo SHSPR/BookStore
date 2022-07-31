@@ -1,5 +1,4 @@
-﻿using BookStore.Data;
-using BookStore.Models;
+﻿using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Identity;
@@ -10,17 +9,17 @@ namespace BookStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly DataContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DataContext context)
         {
             _logger = logger;
+            _context = context;
         }
-
-        ProductContext productContext = new ProductContext();
 
         public IActionResult Index()
         {
-            IEnumerable<ProductModel> products = productContext.Products;
+            IEnumerable<ProductModel> products = _context.Products;
 
             ViewBag.Products = products;
 
