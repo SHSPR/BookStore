@@ -13,13 +13,13 @@
             foreach (var products in ViewBag.Products)
             {
                 <div class="col mb-3">
-                    <div class="card">
-                        <img src="@products.Cover" class="w-75 mx-auto card-img-top" style="height: 300px" alt="...">
+                    <div class="card h-100 border-primary">
+                        <a class="w-75 mx-auto" href="Product/@products.ProductID"> <img src="@products.Cover" class="card-img-top" style="height: 300px" alt="..."> </a>
                         <div class="card-body text-center">
-                            <h5 class="card-title">@products.Author <br> @products.Title</h5>
-                            <p class="card-text"></p>                            
-                            <a class="btn btn-primary" asp-controller="Cart" asp-action="Add" asp-route-id="@products.ProductID">В Корзину</a>
-                            <a href="Product/@products.ProductID" class="btn btn-primary">Подробнее..</a>
+                            <h5 class="card-title">@products.Author</h5>
+                            <p class="card-text overflow-auto">@products.Title</p>                            
+                            <a class="btn btn-outline-primary" asp-controller="Cart" asp-action="Add" asp-route-id="@products.ProductID">В Корзину</a>
+                            <a href="Product/@products.ProductID" class="btn btn-outline-primary">Подробнее..</a>
                         </div>
                     </div>
                 </div>
