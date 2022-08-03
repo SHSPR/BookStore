@@ -44,7 +44,7 @@ namespace BookStore.Controllers
 
             HttpContext.Session.SetJson("Cart", cart);
 
-            TempData["Success"] = "Товар Добавлен";
+            TempData["Success"] = "Товар Добавлен В Корзину";
 
             return Redirect(Request.Headers["Referer"].ToString());
         }

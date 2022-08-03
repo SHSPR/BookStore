@@ -2,13 +2,15 @@
 
 @if (Model != null)
 {
-    <p>Товаров в корзине: <span class="badge badge-primary">@Model.NumberOfItems</span></p>
-    <p>Итого: <b>@Model.TotalAmount.ToString()</b></p>
-    <a class="btn btn-primary" asp-controller="Cart" asp-action="Index">Корзина</a>
-    <a class="btn btn-danger" asp-controller="Cart" asp-action="Clear">Очистить</a>
+    <li class="nav-item">
+        <p>Выбрано товаров: <span class="text-dark">@Model.NumberOfItems На сумму: <b>@Model.TotalAmount.ToString() руб.</b></span></p>
+    </li>
+
+    @*    <a class="btn btn-primary" asp-controller="Cart" asp-action="Index">Корзина</a>
+        <a class="btn btn-danger" asp-controller="Cart" asp-action="Clear">Очистить</a>*@
 }
 else
 {
-    <p class="lead m-0">Корзина Пуста</p>
+    <span class="text-dark">Корзина Пуста</span>
 }
 

@@ -17,14 +17,13 @@
     else
     {
         <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index"><vc:small-cart /></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Регистрация</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Войти</a>
         </li>
-@*  Кнопка страницы покупки (корзина), нужно отдельное представление и, вероятно, контроллер     
-    <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="1">Корзина</a>
-        </li>*@
     }
 </ul>
