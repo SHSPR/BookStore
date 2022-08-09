@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ProductModel>
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+<h1>Товары</h1>
+
+<p>
+    <a asp-action="Create">Добавить новый</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Цена</th>
+            <th>Обложка</th>
+            <th>Описание</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Author
+                </td>
+                <td>
+                    @item.Price.ToString() руб.
+                </td>
+                <td>
+                    <img src="@item.Cover" width="75" alt="" />
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductID">Изменить</a>
+                    <a asp-action="Delete" asp-route-id="@item.ProductID" class="confirmDelete">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -25,7 +25,7 @@ namespace BookStore.Controllers
 
             return View(cartVM);
         }
-        public async Task<IActionResult> Add(long id)
+        public async Task<IActionResult> Add(Guid id)
         {
             ProductModel productModel = await _context.Products.FindAsync(id);
 
@@ -48,7 +48,7 @@ namespace BookStore.Controllers
 
             return Redirect(Request.Headers["Referer"].ToString());
         }
-        public async Task<IActionResult> Decreace(long id)
+        public async Task<IActionResult> Decreace(Guid id)
         {
             ProductModel productModel = await _context.Products.FindAsync(id);
 

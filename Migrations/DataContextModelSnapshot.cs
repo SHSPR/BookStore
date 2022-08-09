@@ -24,35 +24,34 @@ namespace BookStore.Migrations
 
             modelBuilder.Entity("BookStore.Models.ProductModel", b =>
                 {
-                    b.Property<long>("ProductID")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("ProductID"));
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Author")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Cover")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<Guid>("ID")
-                        .HasColumnType("uuid");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
+
+                    b.Property<long>("ProductID")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Slug")
+                        .HasColumnType("text");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("ProductID");
+                    b.HasKey("Id");
 
                     b.ToTable("Products");
                 });
