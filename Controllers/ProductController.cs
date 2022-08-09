@@ -12,12 +12,12 @@ namespace BookStore.Controllers
             _context = context;
         }
 
-        [Route("Product/{id}")]
-        public IActionResult Product(int id)
+        [Route("Product/{slug}")]
+        public IActionResult Product(string slug)
         {
-            ViewBag.ProductID = id;
+            ViewBag.Slug = slug;
 
-            var products = _context.Products.Where(p => p.ProductID == id);
+            var products = _context.Products.Where(p => p.Slug == slug);
 
             ViewBag.Products = products;
 
