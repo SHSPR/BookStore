@@ -9,7 +9,7 @@ namespace BookStore.Models
         [Key]
         public Guid Id { get; set; }
 
-        public string Cover { get; set; }
+        public string Cover { get; set; } = "/StaticFiles/emptycover.png";
 
         [Required(ErrorMessage = "Добавьте автора")]
         public string Author { get; set; }
